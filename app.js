@@ -76,19 +76,21 @@ let checkEvent = () => {
   checkbox.addEventListener('change', (e) => {
 
     if (!item.classList.contains("completed-task")) {
-      console.log(i);
-      console.log(item);
       allTaskList[getId].completed = "true";
-      console.log(allTaskList[getId]);
       item.classList.add('fade');
       item.classList.add('completed-task');
       completedTodosChild.appendChild(item);// Append listItem to incompleteTasksHolder
-      localStorage.setItem('tasks', JSON.stringify(allTaskList));
+
+      console.log('Task completed:');
+      console.log(allTaskList[getId]);
     } else {
       allTaskList[getId].completed = 'false';
       ongoingTodosChild.appendChild(item);// Append listItem to incompleteTasksHolder
       item.classList.remove('fade');
       item.classList.remove('completed-task');
+
+      console.log('Task moved to ongoing tab:');
+      console.log(allTaskList[getId]);
     }
 
     localStorage.setItem('tasks', JSON.stringify(allTaskList));
@@ -127,6 +129,8 @@ let checkEvent = () => {
   });
 }
 
+allTaskList.length > 0 ? console.log('Tasks loaded completely:'): null;
+
 allTaskList.forEach(()=> {
 
   const taskDiv = document.createElement('div');
@@ -143,6 +147,7 @@ allTaskList.forEach(()=> {
 
   taskTitle.innerText = allTaskList[i].title;
   taskTitle.id = `title${i}`;
+
   console.log(allTaskList[i]);
 
   taskDiv.appendChild(check);
@@ -164,7 +169,7 @@ allTaskList.forEach(()=> {
 
 }) ;
 
-allTaskList.length > 0 ? i = allTaskList.length: 0;
+allTaskList.length > 0 ? i = allTaskList.length: null;
 
 textInput.addEventListener('keyup', function (event) {
   if (event.keyCode === KEYCODE_ENTER) {
@@ -195,7 +200,8 @@ let render = () => {
 
   taskTitle.innerText = allTaskList[allTaskList.length - 1].title;
   taskTitle.id = `title${i}`;
-  console.log(allTaskList[allTaskList.length - 1].title)
+  console.log('Added a new task:');
+  console.log(allTaskList[i]);
 
   taskDiv.appendChild(check);
   taskDiv.appendChild(taskTitle);
