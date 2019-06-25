@@ -7,7 +7,7 @@ let textInput = document.querySelector('input[type=text]');
 let ongoingTab = document.getElementById('ongoing-tab');
 let completedTab = document.getElementById('completed-tab');
 let allTaskTab = document.getElementById('all-task-tab');
-// let removeTaskTab = document.getElementById('remove-task-tab');
+let removeTaskTab = document.getElementById('remove-task-tab');
 let allTaskList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 let KEYCODE_ENTER = 13;
 let KEYCODE_ESC = 27;
@@ -19,15 +19,15 @@ let inputEvent = () => {
   createTodoItem(input.value)
 };
 
-// let deleteAllTask = function() {      // Delete an existing task
-//   localStorage.clear();
-//   ongoingTodosChild.innerHTML ='';
-//   completedTodosChild.innerHTML ='';
-//   allTaskList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-//   i = 0;
-// };
-//
-// removeTaskTab.addEventListener('click', deleteAllTask);
+let deleteAllTask = function() {      // Delete an existing task
+  localStorage.clear();
+  ongoingTodosChild.innerHTML ='';
+  completedTodosChild.innerHTML ='';
+  allTaskList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+  i = 0;
+};
+
+removeTaskTab.addEventListener('click', deleteAllTask);
 
 button.addEventListener('click', inputEvent);
 
