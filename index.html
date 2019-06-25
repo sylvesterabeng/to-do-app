@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Mini todo</title>
+</head>
+<body>
+<div id="out"></div>
+<div id="root">
+  <header>
+    <h1>Mini TODO</h1>
+  </header>
+  <main>
+    <div class="new-task">
+      <input type="text" id="new-task" />
+      <button type="button" id="btn-add-task">+</button>
+    </div>
+    <div class="tab">
+      <div id="all-task-tab" class="tab-item">All Task</div>
+      <div class="separator">|</div>
+      <div id="ongoing-tab" class="tab-item defaultOpen">Ongoing</div>
+      <div class="separator">|</div>
+      <div id="completed-tab" class="tab-item">Completed</div>
+<!--      <button id="remove-task-tab" class="tab-item">x</button>-->
+    </div>
+    <hr class="divider" />
+    <div id="ongoing-todos" class="tabcontent">
+      <div id="ongoing-todos-child">
+      </div>
+    </div>
+    <div id="completed-todos" class="tabcontent">
+      <div id="completed-todos-child">
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
