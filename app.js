@@ -1,13 +1,14 @@
 "use strict";
 let ongoingTodosChild = document.getElementById('ongoing-todos-child');
 let completedTodosChild = document.getElementById('completed-todos-child');
-let button = document.getElementById('btn-add-task');
+let $button = $('#btn-add-task');
 let input = document.getElementById('new-task');
 let textInput = document.querySelector('input[type=text]');
-let ongoingTab = document.getElementById('ongoing-tab');
-let completedTab = document.getElementById('completed-tab');
-let allTaskTab = document.getElementById('all-task-tab');
-let removeTaskTab = document.getElementById('remove-task-tab');
+let $ongoingTab = $('#ongoing-tab');
+let $completedTab = $('#completed-tab');
+let $allTaskTab = $('#all-task-tab');
+let $removeTaskTab = $('#remove-task-tab');
+let $tabItem = $(".tab-item");
 let allTaskList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 let KEYCODE_ENTER = 13;
 let KEYCODE_ESC = 27;
@@ -27,47 +28,42 @@ let deleteAllTask = function() {      // Delete an existing task
   i = 0;
 };
 
-removeTaskTab.addEventListener('click', deleteAllTask);
+$(document).ready(() => {
+  $removeTaskTab.on('click', deleteAllTask);
 
-button.addEventListener('click', inputEvent);
+  $button.on('click', inputEvent);
 
-ongoingTab.addEventListener('click', ()=>{
-  openTab('event', 'ongoing-todos','ongoing-tab')
-})
+  $ongoingTab.on('click', ()=>{
+    openTab('event', 'ongoing-todos','ongoing-tab')
+  });
 
-completedTab.addEventListener('click', ()=>{
-  openTab('event', 'completed-todos','completed-tab')
-})
+  $completedTab.on('click', ()=>{
+    openTab('event', 'completed-todos','completed-tab')
+  });
 
-allTaskTab.addEventListener('click', ()=>{
-  document.getElementById('ongoing-todos').style.display = "block";
-  document.getElementById('completed-todos').style.display = "block";
-  document.getElementById('all-task-tab').classList.add('selected');
-  ongoingTab.classList.remove('selected');
-  completedTab.classList.remove('selected')
-})
+  $allTaskTab.on('click', ()=>{
+    $(".tabcontent").show();
+    $tabItem.removeClass('selected');
+    $('#all-task-tab').addClass('selected');
 
+  });
 
-let openTab = (evt, taskList, tabName) => {
-  let i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tab-item");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" selected", "");
-  }
-  document.getElementById(taskList).style.display = "block";
-  document.getElementById(tabName).classList.add('selected');
-}
+  let openTab = (evt, taskList, tabName) => {
 
-// Get the element with id="defaultOpen" and click on it
-$( document ).ready(function() {
+    $(".tabcontent").hide();
+    $tabItem.removeClass('selected');
+
+    $(`#${taskList}`).show();
+    $(`#${tabName}`).addClass('selected');
+  };
+
   $( ".defaultOpen" ).trigger( "click" );
+
 });
 
+
 let checkEvent = () => {
+
   let title = document.getElementById(`title${i}`);
   let checkbox = document.getElementById(`targetBox${i}`);
   let item = document.getElementById(`todo-div${i}`);
@@ -127,7 +123,7 @@ let checkEvent = () => {
     });
 
   });
-}
+};
 
 allTaskList.length > 0 ? console.log('Tasks loaded completely:'): null;
 
