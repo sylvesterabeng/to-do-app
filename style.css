@@ -9,7 +9,7 @@ header {
 }
 
 input:focus {
-  outline-color: #00CCC0;
+  outline-color: #00BABA;
 }
 
 main {
@@ -99,7 +99,7 @@ main {
   left: -1rem;
   height: 0.45rem;
   border-radius : 10px;
-  background-color: #00CCC0;
+  background-color: #00BABA;
 }
 
 .tab-button.selected {
@@ -116,7 +116,7 @@ main {
   left: -1rem;
   height: 0.45rem;
   border-radius : 10px;
-  background-color: #1B7F79;
+  background-color: #2B9FA9;
 }
 
 #remove-task-tab {
