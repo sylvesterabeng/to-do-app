@@ -59,6 +59,8 @@ $(document).ready(() => {
 
   $( ".defaultOpen" ).trigger( "click" );
 
+
+
 });
 
 

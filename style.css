@@ -122,6 +122,8 @@ main {
   height: 0.45rem;
   border-radius : 10px;
   background-color: #2B9FA9;
+  transition-duration:0.3s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 #remove-task-tab {
