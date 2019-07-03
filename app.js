@@ -142,6 +142,7 @@ allTaskList.forEach(()=> {
   check.id = `targetBox${i}`;
 
   taskTitle.innerText = allTaskList[i].title;
+  taskTitle.classList.add(`task-item`);
   taskTitle.id = `title${i}`;
 
   console.log(allTaskList[i]);
@@ -191,6 +192,7 @@ let render = () => {
 
   taskDiv.id = `todo-div${i}`;
   taskDiv.classList.add(`todo-item`);
+  taskTitle.classList.add(`task-item`);
   check.setAttribute('type', 'checkbox');
   check.id = `targetBox${i}`;
 
