@@ -8,6 +8,10 @@ header {
   padding: 1rem;
 }
 
+input:focus {
+  outline-color: #00CCC0;
+}
+
 main {
   padding: 0 1rem;
 }
@@ -95,7 +99,7 @@ main {
   left: -1rem;
   height: 0.45rem;
   border-radius : 10px;
-  background-color: #B4D2D9;
+  background-color: #00CCC0;
 }
 
 .tab-button.selected {
@@ -112,7 +116,7 @@ main {
   left: -1rem;
   height: 0.45rem;
   border-radius : 10px;
-  background-color: #639AA6;
+  background-color: #1B7F79;
 }
 
 #remove-task-tab {
@@ -123,13 +127,13 @@ main {
   font-weight: bold;
   cursor: pointer;
   outline: none;
-  background-color: tomato;
+  background-color: #FF4858;
   color: #fafafa;
   float: right;
 }
 
 #remove-task-tab:hover {
-  background-color: #F2385A;
+  background-color: #FF3030;
   color: #fafafa;
   float: right;
 }
