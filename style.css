@@ -9,7 +9,7 @@ header {
 }
 
 main {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .divider {
@@ -70,13 +70,49 @@ main {
 .tab-item {
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border-radius: 6px;
+  display: inline-block;
+  /*border-radius: 6px;*/
   color: #777;
 }
-.tab-item.selected,
-.tab-item:hover {
-  background-color: #eee;
+
+.tab-button {
+  text-decoration: none;
+  display: inline-block;
+  position:relative;
+  z-index:0;
+}
+
+.tab-button:hover {
   color: #333;
+}
+
+.tab-button:hover:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -0.8rem;
+  right: -1rem;
+  left: -1rem;
+  height: 0.45rem;
+  border-radius : 10px;
+  background-color: #B4D2D9;
+}
+
+.tab-button.selected {
+  /*background-color: #eee;*/
+  color: #333;
+}
+
+.tab-button.selected:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -0.8rem;
+  right: -1rem;
+  left: -1rem;
+  height: 0.45rem;
+  border-radius : 10px;
+  background-color: #639AA6;
 }
 
 #remove-task-tab {
@@ -93,7 +129,7 @@ main {
 }
 
 #remove-task-tab:hover {
-  background-color: red;
+  background-color: #F2385A;
   color: #fafafa;
   float: right;
 }
@@ -122,8 +158,8 @@ div.hide {
 }
 
 #container {
-  margin: 40px 40px;
+  margin: 2.5rem 2.5rem;
   border-radius: 30px;
-  padding: 0 30px 20px 30px;
+  padding: 0 2rem 2rem 2rem;
   box-shadow: 0 4px 15px 0 rgba(0,0,0,.15);
 }

@@ -8,7 +8,7 @@ let $ongoingTab = $('#ongoing-tab');
 let $completedTab = $('#completed-tab');
 let $allTaskTab = $('#all-task-tab');
 let $removeTaskTab = $('#remove-task-tab');
-let $tabItem = $(".tab-item");
+let $tabButton = $(".tab-button");
 let allTaskList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 let KEYCODE_ENTER = 13;
 let KEYCODE_ESC = 27;
@@ -43,7 +43,7 @@ $(document).ready(() => {
 
   $allTaskTab.on('click', ()=>{
     $(".tabcontent").show();
-    $tabItem.removeClass('selected');
+    $tabButton.removeClass('selected');
     $('#all-task-tab').addClass('selected');
 
   });
@@ -51,7 +51,7 @@ $(document).ready(() => {
   let openTab = (evt, taskList, tabName) => {
 
     $(".tabcontent").hide();
-    $tabItem.removeClass('selected');
+    $tabButton.removeClass('selected');
 
     $(`#${taskList}`).show();
     $(`#${tabName}`).addClass('selected');
