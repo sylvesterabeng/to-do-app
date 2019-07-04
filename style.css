@@ -183,10 +183,15 @@ div.hide {
   body {
     font-size: 0.9rem;
   }
+
+  header {
+    padding: 0.4rem 1rem;
+  }
+
   #container {
-    margin: 1.5rem 1.3rem;
+    margin: 1.0rem 0.6rem;
     border-radius: 30px;
-    padding: 0 0.9rem 1.1rem 0.9rem;
+    padding: 0 0.5rem 1.1rem 0.5rem;
     box-shadow: 0 4px 15px 0 rgba(0,0,0,.15);
   }
 
@@ -211,11 +216,15 @@ div.hide {
   }
 
   .tab-item {
-    padding: 0.1rem 0.15rem;
+    padding: 0.1rem 0.13rem;
     cursor: pointer;
     display: block;
     color: #777;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+  }
+
+  .tab {
+    margin: 1.5rem 0;
   }
 
   .tab .separator {
@@ -226,7 +235,7 @@ div.hide {
   #remove-task-tab {
     border: 1px solid #ccc;
     border-radius: 6px;
-    padding: 0.3rem 0.9rem;
+    padding: 0.3rem 0.85rem;
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
@@ -260,6 +269,15 @@ div.hide {
     height: 0.25rem;
     border-radius : 10px;
     background-color: #00BABA;
+  }
+
+  .todo-item {
+    margin: 0.3rem 0;
+    padding: 0.3rem 0.1rem;
+  }
+
+  .task-item {
+    bottom: 0.15rem;
   }
 
 }
