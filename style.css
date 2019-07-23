@@ -129,9 +129,11 @@ main {
 #remove-task-tab {
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 0.3rem 1.6rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0.7rem;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.8rem;
   cursor: pointer;
   outline: none;
   background-color: #FF4858;
@@ -235,8 +237,9 @@ div.hide {
   #remove-task-tab {
     border: 1px solid #ccc;
     border-radius: 6px;
-    padding: 0.3rem 0.85rem;
-    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.7rem;
     font-weight: bold;
     cursor: pointer;
     outline: none;
